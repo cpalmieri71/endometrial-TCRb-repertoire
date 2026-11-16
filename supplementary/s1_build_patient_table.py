@@ -23,7 +23,7 @@ from _common import load_config, patient_codes, curated_annotations
 
 COLS = [
     ("Patient", "Sequential study code assigned for publication (P1–P13); the order is arbitrary with respect to all study variables."),
-    ("Age at surgery, y", "Age in completed years at the time of surgical resection."),
+    ("Age at surgery, y (5-year class)", "Age at surgical resection, in 5-year classes to limit the risk of indirect identification; the cohort median and interquartile range are given in Table 1."),
     ("Histotype", "Histological type on the definitive surgical specimen."),
     ("FIGO grade", "Histological grade (FIGO) for endometrioid carcinomas; not applicable to clear-cell carcinoma."),
     ("Myometrial invasion", "Depth of myometrial invasion relative to total myometrial thickness (≤50% or >50%); not evaluable in one case."),
@@ -76,6 +76,9 @@ def num(x, nd=2):
     try:
         f = float(x); return int(round(f)) if nd == 0 else round(f, nd)
     except ValueError: return x
+def age_class(x):
+    """Five-year age class, e.g. 63 -> '60-64'."""
+    a = int(float(x)); lo = a - a % 5; return f"{lo}–{lo + 4}"
 def cap(x):
     x = (x or "").strip(); return x[0].upper() + x[1:] if x else "Not reported"
 def gs(x):
@@ -108,7 +111,7 @@ def main():
     wb = openpyxl.Workbook(); ws = wb.active; ws.title = "Patient_level"; ws.append([c for c, _ in COLS])
     for r in rows:
         a = ann[int(r["subject"])]
-        ws.append([codes[int(r["subject"])], num(r["Age(y)"], 0), cap(r["hist_histotype"]), grade(r["hist_grade"]),
+        ws.append([codes[int(r["subject"])], age_class(r["Age(y)"]), cap(r["hist_histotype"]), grade(r["hist_grade"]),
                    myo(r["hist_myometrial_invasion_category"]), yn(r["hist_lvsi"]), cap(r["hist_p53_pattern"]),
                    num(r["oca_tmb"]), num(r["oca_msi_score"]), num(r["oca_gim"]), gs(r["oca_gis_status"]), num(r["oca_loh"]),
                    yn(r["oca_pole_status"]), yn(r["oca_plod1_status"]),

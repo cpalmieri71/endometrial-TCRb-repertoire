@@ -20,9 +20,14 @@ clonotype tables, the clinical table and the Oncomine Comprehensive Assay Plus (
 
 ## Data
 
-* Processed MiXCR clonotype tables (26 files, `<id>_PBMC.tsv` / `<id>_biopsia.tsv`):
-  Zenodo, https://doi.org/10.5281/zenodo.18246999
-* Raw reads: NCBI SRA, BioProject PRJNA1474700 (`data/sra_accessions.csv`).
+* Processed clonotype tables (26 TSV files, one per repertoire, generated from the raw FASTQ files
+  with MiXCR; columns `aaSeqCDR3`, `readCount`, `readFraction`):
+  Zenodo, https://doi.org/10.5281/zenodo.24139417. Files are named `<n>_biopsia.tsv` and
+  `<n>_PBMC.tsv`, where `<n>` = 1–13 is the patient code (P1–P13). Place them in the folder named
+  `repseq_dir` in `config/config.json`; with these files `private/patient_key.csv` is simply
+  `n,Pn` for n = 1–13.
+* Raw reads: NCBI SRA, BioProject PRJNA1474700, study SRP706670; the 26 run and BioSample
+  accessions are listed in `data/sra_accessions.csv` (also Supplementary Data 15).
 * Clinical table (`tabella_endo.xlsx`) and OCA Plus summary (`oca_plus_new.txt`): patient-level
   data, available from the corresponding author under a data-use agreement.
 
