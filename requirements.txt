@@ -1,0 +1,11 @@
+# Pipeline Steps 1-9 were run with Python 3.9.22 and the versions below
+# (recorded in each step's run_config.json).
+numpy==2.0.2
+pandas==2.3.3
+scipy==1.13.1
+matplotlib==3.9.4
+powerlaw==2.0.0
+openpyxl>=3.1
+# analysis/, figures/ and supplementary/ were run with Python 3.13 (NumPy 2.x, pandas 3.0,
+# SciPy 1.18, matplotlib 3.11, openpyxl 3.1.5); they also run with the versions above.
+# molecular/ uses the Python standard library only.

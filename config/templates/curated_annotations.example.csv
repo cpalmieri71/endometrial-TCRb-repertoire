@@ -1,0 +1,4 @@
+internal_id,msi_status,pole_ed_variant,tp53_variant,molecular_class,regional_nodal_status,nodes_examined
+100001,MSS,None detected,None detected,NSMP,Negative,18
+100002,MSS,c.857C>G p.Pro286Arg (VAF 0.29),None detected,POLEmut,Not reported,Not reported
+100003,MSI-High,None detected,None detected,MMRd,Negative,Not stated

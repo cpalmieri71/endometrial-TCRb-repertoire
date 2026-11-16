@@ -1,0 +1,17 @@
+# Patient-level data and outputs are never committed
+config/config.json
+private/
+repSeq/
+results/
+outputs/
+*.bam
+*.bai
+*.vcf
+*.vcf.gz
+*.tsv
+!molecular/gene_regions.tsv
+*.xlsx
+*.numbers
+__pycache__/
+*.pyc
+.DS_Store

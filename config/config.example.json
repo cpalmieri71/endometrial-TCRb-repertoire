@@ -1,0 +1,8 @@
+{
+  "project_root": "/path/to/project",
+  "repseq_dir": "repSeq",
+  "results_dir": "results",
+  "clinical_table": "tabella_endo.xlsx",
+  "private_dir": "private",
+  "output_dir": "outputs"
+}
