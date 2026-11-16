@@ -1,6 +1,7 @@
 # Paired tumor-biopsy and PBMC TCRβ repertoires in endometrial cancer
 
-Code for the manuscript *(title, authors and DOI to be added on acceptance)*.
+Code for the manuscript "Tumor–blood TCRβ repertoire architecture in endometrial cancer: abundance-dependent peripheral detection and intratumoral enrichment of shared clonotypes". Authors:  Aversa I & Abatino A, et al. 2026.
+
 It reproduces every number, figure and Supplementary Data file from the processed
 clonotype tables, the clinical table and the Oncomine Comprehensive Assay Plus (OCA Plus) results.
 
@@ -87,4 +88,4 @@ Figures use the FreeSans font when installed (falls back to the matplotlib defau
 
 ## License
 
-*(to be chosen by the authors before the repository is made public)*
+Released under the MIT License (see LICENSE).
